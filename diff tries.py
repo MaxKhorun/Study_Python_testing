@@ -135,3 +135,63 @@
 #     print(bool(G))
 # else:
 #     print(not G)
+
+
+# def adder(x):
+#     print(x+5)
+#
+# adder(15)
+
+import math
+'''def result_in_dict(fnc):
+    results = {}
+    count = 0
+    def wrapper_inside_fnc(*nums):
+        nonlocal count
+        if nums not in results:
+            results[*nums] = fnc(*nums)
+            print(f'Write value in: {results[*nums]}')
+        else:
+            print(f'Return values from temp dict_mem: {results[*nums]}')
+        print(f'Dict_mem: {results}')
+        count +=1
+        print(count)
+    return wrapper_inside_fnc
+
+@result_in_dict
+def nums(a,b,c):
+    return (a+b)*c/2
+
+nums(2,3,4)
+nums(1,5,9)
+nums(10,23,5)
+nums(2,3,4)
+nums(2,3,4)'''
+
+#
+# alphabet = 'йцукенгшщзхъфывапролджэячсмитьбю'
+# alphabet_upper = alphabet.upper()
+# eng_alphabet = 'qwertyuiopasdfghjklzxcvbnm'
+# eng_alphabet_upper = eng_alphabet.upper()
+#
+# code_num = int(input('Введите число для создания шифрованной версии текста: '))
+# encoded_sum = ''
+# def char_in_text_plus(txt):
+#     for item in txt:
+#         if item in alphabet:
+#             return alphabet[(alphabet.index(item) + code_num) % len(alphabet)]
+#         elif item in alphabet_upper:
+#             return alphabet_upper[(alphabet_upper.index(item) + code_num) % len(alphabet_upper)]
+#         else:
+#             return item
+#
+# with open('D:\SF\Цезарь.txt','r', encoding='utf8') as m_file:
+#     for line in m_file:
+#         for item in line:
+#             encoded_sum += char_in_text_plus(item)
+# # print(encoded_sum)
+#
+# with open('Encoded output.txt', 'w', encoding='utf8') as final_file:
+#     final_file.write(encoded_sum)
+
+print(3 % 2)

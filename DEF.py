@@ -887,13 +887,13 @@ for m,h in data:
 print('3 (index massi tela + new dict with IMT and old data tuple: ', '\n','\n',
       new_data)'''
 
-a = ["asd", "bbd", "ddfa", "mcsa"]
-
-print(list(map(len, a)))
-
-a_1 = ["это", "маленький", "текст", "обидно"]
-
-print(list(map(str.upper, a_1)))
+# a = ["asd", "bbd", "ddfa", "mcsa"]
+#
+# print(list(map(len, a)))
+#
+# a_1 = ["это", "маленький", "текст", "обидно"]
+#
+# print(list(map(str.upper, a_1)))
 # def IMT(func):
 #     for m, h in data:
 #         return m / ((h / 100) ** 2)
@@ -912,3 +912,78 @@ print(list(map(str.upper, a_1)))
 # data_sort = list(map(IMT, dict(data)))
 # print(data_sort)
 # print(dict(sorted(data), key == lyambda(x): key/(values/100)**2))
+
+
+'''Создать обработчик задач'''
+
+# queue_of_task.append(input('What to do? - Write it down! \n---'))
+'''
+length_of_task_line = int(input('Ввести длинну списка задач: '))
+queue_of_task = [0 for _ in range(length_of_task_line)] #список для контроля длины и обработки задач
+order = 0 #номер задачи
+head_of_que = 0
+tail_of_que = 0
+def is_empty():
+    return head_of_que == tail_of_que and queue_of_task[head_of_que] == 0
+def size(): #current size of queue
+    if is_empty():
+        return 0
+    elif head_of_que == tail_of_que:
+        return length_of_task_line
+    elif head_of_que > tail_of_que:
+        return length_of_task_line - head_of_que + tail_of_que
+    else:
+        return tail_of_que - head_of_que
+def add():
+    global order, tail_of_que
+    order += 1
+    queue_of_task[tail_of_que] = order
+    print(f'Task N_{order} is added to the list')
+    tail_of_que = (tail_of_que + 1) % length_of_task_line
+def do():
+    global head_of_que
+    print(f'Task N_{queue_of_task[head_of_que]} is done and deleted')
+    queue_of_task[head_of_que] = 0
+    head_of_que = (head_of_que + 1) % length_of_task_line
+while True:
+    cmd = input('Введите команду: ')
+    if cmd == 'empty':
+        if is_empty():
+            print('List is empty')
+        else:
+            print('List is not empty')
+
+    elif cmd == 'size':
+        print('Amount of tasks in the queue: ', size())
+
+    elif cmd == 'add':
+        if size() != length_of_task_line:
+            add()
+        else:
+            print('List is full.')
+
+    elif cmd == 'show':
+        if is_empty():
+            print('List is empty.')
+        else:
+            print(f'Task N_{head_of_que} is in priority')
+
+    elif cmd == 'do':
+        if is_empty():
+            print('List is empty.')
+        else:
+            do()
+
+    elif cmd == 'exit':
+        for _ in range(size()):
+            do()
+        print('Queue is empty. End.')
+        break
+    else:
+        print('Wrong command')
+
+
+# queue_of_task[4] = 4
+# print(queue_of_task[head_of_que])
+# print(queue_of_task[head_of_que] == 0)'''
+
