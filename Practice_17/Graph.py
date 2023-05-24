@@ -46,7 +46,6 @@ class Bin_Trees:
         self.left_branch = None
         self.right_branch = None
 
-
     def get_values(self):
         print(self.value)
 
@@ -66,6 +65,7 @@ class Bin_Trees:
             n_right = Bin_Trees(right_value)
             n_right.right_branch = self.right_branch
         return self
+
     def pre_order(self):
         print(self.value)
 
@@ -75,6 +75,15 @@ class Bin_Trees:
         if self.right_branch is not None:
             self.right_branch.pre_order()
 
+    def in_order(self):
+            if self.left_branch is not None:
+                self.left_branch.in_order()
+
+            print(self.value)
+
+            if self.right_branch is not None:
+                self.right_branch.in_order()
+
 
 
 default_tree = Bin_Trees(2).insert_left(7).insert_right(5)
@@ -83,7 +92,9 @@ branch_6 = branch_7.right_branch.insert_left(5).insert_right(11)
 branch_5 = default_tree.right_branch.insert_right(9)
 branch_9 = branch_5.right_branch.insert_left(4)
 
-default_tree.pre_order()
+default_tree.in_order()
+
+
 
 
 
