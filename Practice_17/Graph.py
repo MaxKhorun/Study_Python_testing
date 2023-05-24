@@ -41,10 +41,49 @@ print(D)'''
 # Trees
 
 class Bin_Trees:
-    def __init__
+    def __init__(self, value):
+        self.value = value
+        self.left_branch = None
+        self.right_branch = None
+
+
+    def get_values(self):
+        print(self.value)
+
+    def insert_left(self, next_value):
+        if self.left_branch is None:
+            self.left_branch = Bin_Trees(next_value)
+        else:
+            new_test = Bin_Trees(next_value)
+            new_test.left_branch = self.left_branch
+            self.left_branch = new_test
+        return self
+
+    def insert_right(self, right_value):
+        if self.right_branch is None:
+            self.right_branch = Bin_Trees(right_value)
+        else:
+            n_right = Bin_Trees(right_value)
+            n_right.right_branch = self.right_branch
+        return self
+    def pre_order(self):
+        print(self.value)
+
+        if self.left_branch is not None:
+            self.left_branch.pre_order()
+
+        if self.right_branch is not None:
+            self.right_branch.pre_order()
 
 
 
+default_tree = Bin_Trees(2).insert_left(7).insert_right(5)
+branch_7 = default_tree.left_branch.insert_left(2).insert_right(6)
+branch_6 = branch_7.right_branch.insert_left(5).insert_right(11)
+branch_5 = default_tree.right_branch.insert_right(9)
+branch_9 = branch_5.right_branch.insert_left(4)
+
+default_tree.pre_order()
 
 
 

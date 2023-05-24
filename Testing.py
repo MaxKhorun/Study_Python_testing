@@ -23,7 +23,7 @@ n может быть больше, чем минут в сутках'''
 # m =arg.minutes - аргумет библиотеки,который возвращает значение минут.
 
 '''Binar search. Game "Guesss the number" '''
-number = int(input('type: '))
+'''number = int(input('type: '))
 def guess_the_N(number):
     counter = 1
     minimum = 1
@@ -38,5 +38,18 @@ def guess_the_N(number):
         predict = (minimum + maximum) // 2
     return counter
 
-print(guess_the_N(number))
+print(guess_the_N(number))'''
 
+'''lbrnth = []
+
+with open(f'C:\SF\GITHUB\Study_Python_testing\labirinth.txt', 'r') as file:
+    for line in file:
+        lbrnth.append(line.replace('\n', '').split(' '))
+print(lbrnth)
+for i in range(len(lbrnth)):
+    for y in range(len(lbrnth)):'''
+
+
+fff = ['dfg', {'sdf': None}, {3: [3, 3], 8:[2, 12], 'sdf':None}, {4: [4, 6, 9]}, 'w sed', 2, 'sdf']
+
+print(fff[2][8])

@@ -58,9 +58,9 @@ guest_2 = Guest('Леонид','Второй','ОМСК','Питон','Монт�
 guest_3 = Guest('Вера','Третья','Чехов','тюлень','Аркадий')
 List_of_guests = [guest_3, guest_2, guest_1]
 
-# for gst in List_of_guests:
-#     if isinstance(gst, Guest):
-#         print(gst)
-
 for gst in List_of_guests:
-    print(gst.get_guest())
+    if isinstance(gst, Guest):
+        print(gst)
+
+# for gst in List_of_guests:
+#     print(gst.get_guest())
