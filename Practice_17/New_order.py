@@ -1,21 +1,20 @@
 
-class Nope:
+class New_Class:
 
-    def __init__(self, value = None, next_ = None):
+    def __init__(self, value=None, next_=None):
         self.value = value
-        self.next_ = next_
+        self.next = next_
 
     def __str__(self):
+
         return 'Nope value = ' + str(self.value)
 
 class Linked_List:
     def __init__(self):
         self.first = None
         self.last = None
-
     def clear(self):
         self.__init__()
-
     def __str__(self):
         R = ''
 
@@ -28,48 +27,66 @@ class Linked_List:
         return R
     def pushleft(self, value):
         if self.first is None:
-            self.first = Nope(value)
-            self.last - self.first
+            self.first = New_Class(value)
+            self.last = self.first
 
         else:
-            new_Nope = Nope(value, self.first)
+            new_Nope = New_Class(value, self.first)
             self.first = new_Nope
-
     def pushright(self,value):
         if self.first is None:
-            self.first = Nope(value)
+            self.first = New_Class(value)
             self.last = self.first
         else:
-            new_Nope = Nope(value, self.first)
-            self.first = new_Nope
-
+            new_Nope = New_Class(value)
+            self.last.next = new_Nope
+            self.last = new_Nope
     def popleft(self):
         if self.first is None:  # если список пустой, возвращаем None
             return None
         elif self.first == self.last:  # если список содержит только один элемент
-            Nope = self.first  # сохраняем его
+            New_Class = self.first  # сохраняем его
             self.__init__()  # очищаем
-            return Nope  # и возвращаем сохраненный элемент
+            return New_Class  # и возвращаем сохраненный элемент
         else:
-            Nope = self.first  # сохраняем первый элемент
+            New_Class = self.first  # сохраняем первый элемент
             self.first = self.first.next  # меняем указатель на первый элемент
-            return Nope  # возвращаем сохраненный
-
+            return New_Class  # возвращаем сохраненный
     def popright(self):
             if self.first is None:  # если список пустой, возвращаем None
                 return None
             elif self.first == self.last:  # если список содержит только один элемент
-                Nope = self.first  # сохраняем его
+                New_Class = self.first  # сохраняем его
                 self.__init__()  # очищаем
-                return Nope  # и возвращаем сохраненный элемент
+                return New_Class  # и возвращаем сохраненный элемент
             else:
-                Nope = self.last  # сохраняем последний
-                pointer = self.first  # создаем указатель
-                while pointer.next is not Nope:  # пока не найдем предпоследний
-                    pointer = pointer.next
-                pointer.next = None  # обнуляем указатели, чтобы
-                self.last = pointer  # предпоследний стал последним
-                return Nope  # возвращаем сохраненный
+                New_Class = self.last  # сохраняем последний
+                point = self.first  # создаем указатель
+                while point.next is not New_Class:  # пока не найдем предпоследний
+                    point = point.next
+                point.next = None  # обнуляем указатели, чтобы
+                self.last = point  # предпоследний стал последним
+                return New_Class  # возвращаем сохраненный
+    def __iter__(self):
+        self.current = self.first
+        return self
+    def __next__(self):
+        if self.current is None:
+            raise StopIteration
+        else:
+            self.current = self.current.next
+            return New_Class
+
+    def __len__(self): #считаем размер структуры данных
+        count = 0
+        pointer = self.first
+        while pointer is not None:
+            count +=1
+            pointer = pointer.next
+        return count
+
+
+
 
 LL = Linked_List()
 
@@ -81,5 +98,6 @@ LL.pushleft(4)
 LL.pushright(5)
 LL.popleft()
 
-print(LL)
+print(LL, 'type: ', type(LL))
+print(len(LL))
 
