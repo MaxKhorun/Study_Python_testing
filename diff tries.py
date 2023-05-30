@@ -102,6 +102,8 @@
 '''
 Решение квадратного уравнения
 '''
+import random
+
 # def discriminant(a,b,c):
 #     return (b**2) - (4 * a * c)
 #
@@ -193,5 +195,17 @@ nums(2,3,4)'''
 #
 # with open('Encoded output.txt', 'w', encoding='utf8') as final_file:
 #     final_file.write(encoded_sum)
+# a,f,j,y = 3, 1, 1, 0
+# L = [3,7,2,0]
+# for i in L:
+#     if all(i) is int:
+#         print(L)
+#     else:
+#         print('no int')
 
-print(3 % 2)
+# rand_L = random.choice(range(left, right))
+# print(rand_L)
+# if L[M] == s_N:
+#     print(M, f'число - {L[M]}')
+# else:
+#     print('Nope', M, f'число - {L[M]}')

@@ -251,23 +251,36 @@ else:
 # L = list(map(int, input().split()))
 
 
-try:
-    age = int(input("How old are you?"))
-    if age > 100 or age <= 0:
-        raise ValueError("Тебе не может быть столько лет")
-except ValueError as error:
-    print(error)
-    print("Неправильный возраст")
-else:
-    print(f"You are {age} years old!")
-#
-try:
-    x = int(input('введите число/числа - '))
-    print(x)
-except ValueError as error:
-    print(error)
-    print('Введите число заново')
-else:
-    print(f'Вы ввели правильное число - {x}')
-finally:
-    print('Выход из программы')
+# try:
+#     age = int(input("How old are you?"))
+#     if age > 100 or age <= 0:
+#         raise ValueError("Тебе не может быть столько лет")
+# except ValueError as error:
+#     print(error)
+#     print("Неправильный возраст")
+# else:
+#     print(f"You are {age} years old!")
+# #
+# try:
+#     x = int(input('введите число/числа - '))
+#     print(x)
+# except ValueError as error:
+#     print(error)
+#     print('Введите число заново')
+# else:
+#     print(f'Вы ввели правильное число - {x}')
+# finally:
+#     print('Выход из программы')
+
+array = [2, 3, 1, 4, 6, 5, 9, 8, 7]
+counter = 0
+for i in range(1, len(array)):
+    x = array[i]
+    idx = i
+    while idx > 0 and array[idx-1] > x:
+        counter += 1
+        array[idx] = array[idx-1]
+        idx -= 1
+    array[idx] = x
+print("количество сравнений:", counter)
+print(array)

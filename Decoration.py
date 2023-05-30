@@ -71,7 +71,7 @@ def from_db():
 from_db()
 
 '''
-
+'''
 
 Вот универсальный шаблон для декоратора:
 
@@ -82,4 +82,5 @@ def my_decorator(fn):
         result = fn(*args, **kwargs)
         print('Этот код будет выполняться после каждого вызова функции')
         return result
-    return wrapper
+    return wrapper'''
+

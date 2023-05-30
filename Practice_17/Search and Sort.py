@@ -24,7 +24,7 @@ def count_elem(array, elem):
 array = (list(i for i in range(0,11)))*2
 
 print(count_elem(array, 6))
-
+'''
 
 def binary_search(array, element, left, right):
     if left > right:  # если левая граница превысила правую,
@@ -40,11 +40,11 @@ def binary_search(array, element, left, right):
         return binary_search(array, element, middle + 1, right)
 
 
-element = int(input())
-array = [i for i in range(1, 100)]  # 1,2,3,4,...
+element = int(input('put a numb: '))
+array = [2, 5, 1, 4, 6, 5, 9, 8, 7]
 
 # запускаем алгоритм на левой и правой границе
-print(binary_search(array, element, 0, 99))'''
+print(binary_search(array, element, 0, len(array)))
 
 
 '''# Naive
@@ -94,6 +94,7 @@ for i in range(len(array)):
 print(array)
 print(count)'''
 
+#Сортировка выбором \ selection sorting
 
 '''array = [2, 3, 1] #4, 6, 5, 9, 8, 7]
 count = 0
@@ -113,25 +114,143 @@ for i in range(len(array)):
 print(array)
 print(count)'''
 
-array = [2, 5, 1, 4, 6, 5, 9, 8, 7]
+'''array = [2, 5, 1, 4, 6, 5, 9, 8, 7]
 
-# for i in range(len(array)):
-#     frst_indx = i # его сравниваем со всеми остальными
-#     for j in range(frst_indx, len(array)):
-#         if frst_indx > j:
-#             frst_indx = j
-#         elif frst_indx == j:
 
+# сортировка вставками
+# |
+# |
+# V
+count = 0
 for i in range(1, len(array)):
     x = array[i]
     idx = i
-    count = 0
-    while idx > 0 and array[idx-1] > x:
 
+    while idx > 0 and array[idx-1] > x:
+        count += 1
         array[idx] = array[idx-1]
         idx -= 1
-    count += 1
+
     array[idx] = x
 
 print(array)
-print(count)
+print(count)'''
+
+
+#Пузырьковый метод
+
+'''array = [2, 5, 1, 4, 6, 5, 9, 8, 7]
+
+for i in range(len(array)):
+    for j in range(len(array)-i-1):
+        if array[j] > array[j+1]:
+            array[j], array[j+1] = array[j+1], array[j]
+
+print(array)'''
+
+
+#сортировка слиянием
+
+'''L = [2, 5, 1, 4, 6, 5, 9, 8, 7]
+
+def merge_sort(L):  # "разделяй"
+    if len(L) < 2:  # если кусок массива меньше 2,
+        return L[:]  # выходим из рекурсии
+    else:
+        middle = len(L) // 2  # ищем середину
+        left = merge_sort(L[:middle])  # рекурсивно делим левую часть
+        right = merge_sort(L[middle:])  # и правую
+        return merge(left, right)  # выполняем слияние
+
+
+def merge(left, right):  # "властвуй"
+    result = []  # результирующий массив
+    i, j = 0, 0  # указатели на элементы
+
+    # пока указатели не вышли за границы
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    # добавляем хвосты
+    while i < len(left):
+        result.append(left[i])
+        i += 1
+
+    while j < len(right):
+        result.append(right[j])
+        j += 1
+
+    return result
+
+
+print(merge_sort(L))'''
+
+#быстрая сортировка
+import random
+
+'''array = [2, 5, 1, 4, 6, 5, 9, 8, 7]
+
+def qsort(array, left, right):
+    middle = left+right // 2
+    p = array[middle]
+    i, j = left, right
+    while i <= j:
+        while array[i] < p:
+            i += 1
+        while array[j] > p:
+            j -= 1
+        if i <= j:
+            array[i], array[j] = array[j], array[i]
+            i += 1
+            j -= 1
+
+    if j > left:
+        qsort(array, left, j)
+    if right > i:
+        qsort(array, i, right)
+    return array
+'''
+
+
+'''L = [2, 5, 1, 4, 6, 5, 9, 8, 7]
+
+def merge_sort(L):  # "разделяй"
+    if len(L) < 2:  # если кусок массива меньше 2,
+        return L[:]  # выходим из рекурсии
+    else:
+        middle = len(L) // 2  # ищем середину
+        left = merge_sort(L[:middle])  # рекурсивно делим левую часть
+        right = merge_sort(L[middle:])  # и правую
+        return merge(left, right)  # выполняем слияние
+
+
+def merge(left, right):  # "властвуй"
+    result = []  # результирующий массив
+    i, j = 0, 0  # указатели на элементы
+
+    # пока указатели не вышли за границы
+    while i < len(left) and j < len(right):
+        if left[i] < right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+
+    # добавляем хвосты
+    while i < len(left):
+        result.append(left[i])
+        i += 1
+
+    while j < len(right):
+        result.append(right[j])
+        j += 1
+
+    return result
+
+print(merge_sort(L))'''
