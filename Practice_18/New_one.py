@@ -15,10 +15,26 @@ r_2 = requests.post('https://httpbin.org/post', json = json.dumps(data))
 print(r_2.content)
 '''
 
-get_txt = requests.get('https://baconipsum.com/api/?type=meat-and-filler')
+'''get_txt = requests.get('https://baconipsum.com/api/?type=meat-and-filler')
 mod_get_txt = json.loads(get_txt.content)
-# print(mod_get_txt)
+print(mod_get_txt)
 
-# answ_1 = open('test_JSON_answer_01.06.txt', 'w')
+answ_1 = open('test_JSON_answer_01.06.txt', 'w')
 print(mod_get_txt[0])
-# answ_1.write(str(mod_get_txt))
+answ_1.write(str(mod_get_txt))'''
+
+#title = tree.xpath('/html/head/title/text()')
+import lxml.html
+from lxml import etree
+
+'''html = requests.get('https://www.python.org/').content
+tree = etree.parse('Welcome to Python.org.html', lxml.html.HTMLParser())
+ul_news = tree.findall('body/div/div[3]/div/section/div[2]/div[1]/div/ul/li')
+for li in ul_news:
+        t = li.find('time')
+        a = li.find('a')
+        print(a.text, t.get('datetime'))'''
+
+
+
+
