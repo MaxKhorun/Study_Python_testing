@@ -209,3 +209,17 @@ nums(2,3,4)'''
 #     print(M, f'число - {L[M]}')
 # else:
 #     print('Nope', M, f'число - {L[M]}')
+currency_dict = {
+    'рубли': 'RUB',
+    'доллар': 'USD',
+    'евро': 'EUR',
+    'фунт стерлингов': 'GBP',
+    'японская йена': 'JPY',
+    'китайский юань': 'CNY'
+}
+
+text = 'Доступные валюты для перевода: '
+for k in currency_dict.keys():
+    text = '\n'.join((text, k,))
+
+# print(text)

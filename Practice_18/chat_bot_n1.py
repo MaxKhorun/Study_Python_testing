@@ -3,11 +3,11 @@ import lxml.html
 from lxml import etree
 
 
-token_01_06_23 = '6050867287:AAGGG2blD609bc8ELrquhAoWcJA-ITtsd0w'
+token_01_06_23 = 'None'
 
 test_bot = telebot.TeleBot(token_01_06_23)
 
-@test_bot.message_handler(commands=['start', 'help'])
+@test_bot.message_handler(commands=['start'])
 def start_n_help_func(message):
     test_bot.send_message(message.chat.id, f'Hello, there, pal, {message.chat.username}!')
 @test_bot.message_handler(content_types=['text', 'audio', 'document', 'photo'])
