@@ -542,7 +542,7 @@ class Empl_1(Person):
     def __init__(self, name, id_numb, birth_date='', departm='', salary=0, **kwargs):
         self.departm = departm
         self.salary = salary
-        Person.__init__(self, name, id_numb, birth_date, **kwargs)А
+        Person.__init__(self, name, id_numb, birth_date, **kwargs)
     def is_Employee(self):
         return True
 #     def employee_info(self):
