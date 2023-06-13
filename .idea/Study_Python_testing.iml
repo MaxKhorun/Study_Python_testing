@@ -6,5 +6,13 @@
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (Study_Python_testing)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="convert_bot" />
+    <orderEntry type="module" module-name="AutoTest" />
+  </component>
+  <component name="PackageRequirementsSettings">
+    <option name="requirementsPath" value="" />
+  </component>
+  <component name="TestRunnerService">
+    <option name="PROJECT_TEST_RUNNER" value="py.test" />
   </component>
 </module>
