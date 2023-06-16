@@ -7,6 +7,7 @@ print(resp_mod)
 
 id_pet = 9223372036854635244
 
+'тестирование гет'
 resp_getPet = requests.get(f'https://{base_url}/pet/{id_pet}')
 print(resp_getPet.json())
 
@@ -15,5 +16,11 @@ post_params = {
     'photoUrls': 'no photo',
     'status': 'available'
 }
+
+'тестирование пост'
 resp_postPet = requests.post(f'https://{base_url}/pet?{post_params}')
 print(resp_postPet.json())
+
+'тестирование пут'
+
+'тестирование дэлит'
