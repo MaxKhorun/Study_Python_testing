@@ -8,6 +8,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="convert_bot" />
     <orderEntry type="module" module-name="AutoTest" />
+    <orderEntry type="module" module-name="PET_API_autotest" />
+    <orderEntry type="module" module-name="Tsk_19.3.3" />
   </component>
   <component name="PackageRequirementsSettings">
     <option name="requirementsPath" value="" />

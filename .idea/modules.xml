@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../pythonProject/19.2.4/.idea/AutoTest.iml" filepath="$PROJECT_DIR$/../pythonProject/19.2.4/.idea/AutoTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../tsk_19.7.2_PET_API_autotest/.idea/PET_API_autotest.iml" filepath="$PROJECT_DIR$/../tsk_19.7.2_PET_API_autotest/.idea/PET_API_autotest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Study_Python_testing.iml" filepath="$PROJECT_DIR$/.idea/Study_Python_testing.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Tsk_19.3.3/.idea/Tsk_19.3.3.iml" filepath="$PROJECT_DIR$/../Tsk_19.3.3/.idea/Tsk_19.3.3.iml" />
       <module fileurl="file://$PROJECT_DIR$/../QAP_bot/.idea/convert_bot.iml" filepath="$PROJECT_DIR$/../QAP_bot/.idea/convert_bot.iml" />
     </modules>
   </component>
